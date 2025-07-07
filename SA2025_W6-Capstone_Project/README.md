@@ -28,13 +28,25 @@ We are tasked with building a real-time pricing model for smart city parking lot
 
 ---
 
-## 🧭 Architecture Flow
+---
 
-The system follows a real-time processing pipeline:
+## 🧱 Architecture & Workflow Explanation
 
-1. **CSV Input** — simulated live parking data (occupancy, queue, traffic, etc.)
-2. **Pathway** — continuously streams the data and calculates demand-based prices
-3. **Dynamic Pricing Output** — real-time prices visualized via Bokeh
+Our system simulates a real-time smart parking pricing engine using a three-stage architecture:
+
+1. **Data Ingestion**:  
+   - A sample of parking lot sensor data is read from a CSV.
+   - This simulates incoming real-world traffic, occupancy, and queue data.
+
+2. **Stream Processing with Pathway**:  
+   - Pathway reads the data in streaming mode and processes it row-by-row.
+   - A pricing UDF calculates price dynamically using a demand-based model that considers occupancy, queue, traffic, special day, and vehicle type.
+
+3. **Real-Time Output & Visualization**:  
+   - The computed prices are saved to `stream_output.csv`.
+   - We then use Bokeh to visualize the pricing trends per lot in an interactive time series chart.
+
+This architecture closely mimics how an actual smart city system would run in production — processing live data and adjusting prices in real time based on environmental and behavioral factors.
 
 ![Architecture Diagram](architecture.png)
 
