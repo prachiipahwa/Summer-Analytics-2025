@@ -1,7 +1,6 @@
 # 🚗 Dynamic Real-Time Parking Pricing System
 
 **Summer Analytics 2025 – Week 6 Project**  
-Team Submission for [IIT Guwahati's Analytics Club Challenge]
 
 ---
 
@@ -14,7 +13,34 @@ We are tasked with building a real-time pricing model for smart city parking lot
 - Visualizations using **Bokeh**
 - Clear reporting of assumptions, demand modeling, and logic
 
+
 ---
+
+## 🛠️ Tech Stack Used
+
+- **Python 3.11** — primary programming language
+- **Pandas** — for data manipulation and preprocessing
+- **NumPy** — for numerical operations
+- **Pathway** — for real-time streaming and processing
+- **Bokeh** — for interactive data visualization
+- **Google Colab** — for cloud-based development and execution
+- **Git & GitHub** — for version control and submission
+
+---
+
+## 🧭 Architecture Flow
+
+The system follows a real-time processing pipeline:
+
+1. **CSV Input** — simulated live parking data (occupancy, queue, traffic, etc.)
+2. **Pathway** — continuously streams the data and calculates demand-based prices
+3. **Dynamic Pricing Output** — real-time prices visualized via Bokeh
+
+![Architecture Diagram](architecture.png)
+
+
+---
+
 
 ## 🧠 Models Implemented
 
